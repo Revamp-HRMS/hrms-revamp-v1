@@ -4,7 +4,6 @@ import com.hrmsrevamp.model.AppraisalCycleModel;
 import com.hrmsrevamp.model.CustomResponse;
 import com.hrmsrevamp.repository.AppraisalCycleRepository;
 import com.hrmsrevamp.service.AppraisalCycleService;
-import com.hrmsrevamp.util.Messages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,14 +19,13 @@ public class AppraisalCycleServiceImpl implements AppraisalCycleService {
 
   @Override
   public CustomResponse addAppraisalCycle(AppraisalCycleModel appraisalCycleModel) {
-    
+    return null;
   }
 
 
   @Override
   public CustomResponse updateAppraisalCycle(AppraisalCycleModel appraisalCycleModel) {
-
-
+    return null;
   }
 
   @Override
