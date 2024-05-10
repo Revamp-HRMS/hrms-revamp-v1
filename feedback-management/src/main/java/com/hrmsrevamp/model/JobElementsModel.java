@@ -8,6 +8,7 @@ import lombok.Setter;
 public class JobElementsModel {
 
   private Long userId;
+  private Long appraisalCycleId;
   private Long jobElementId;
   private String selfAssessment;
   private String projectLeader;

@@ -1,11 +1,10 @@
 package com.hrmsrevamp.model;
 
-import org.springframework.security.core.userdetails.UserDetails;
+import java.util.List;
 
 public class FeedbackFormModel {
-
-  private UserDetails userDetails;
-  private JobElementsModel jobElementsModel;
+  private AppraisalCycleModel appraisalCycle;
+  private List<JobElementsModel> jobElementsModelList;
   private GoalSetting goalSetting;
 
 }

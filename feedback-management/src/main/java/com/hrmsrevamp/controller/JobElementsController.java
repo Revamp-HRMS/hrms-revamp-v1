@@ -2,18 +2,13 @@ package com.hrmsrevamp.controller;
 
 import com.hrmsrevamp.entity.RatingAndComments;
 import com.hrmsrevamp.entity.User;
-import com.hrmsrevamp.entity.jobElements.JobKnowledge;
 import com.hrmsrevamp.model.CustomResponse;
 import com.hrmsrevamp.model.JobElementsModel;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Map;
 
 @RestController
 @RequestMapping("/job")
@@ -23,10 +18,7 @@ public class JobElementsController {
 
   @PostMapping("/add")
   public ResponseEntity<CustomResponse> addJobElements(@RequestBody JobElementsModel jobElementsModel) {
-    long startTime = System.currentTimeMillis();
-    addJobElements(jobElementsModel);
-    long endTime = System.currentTimeMillis();
-    //LOGGER.debug("Time taken to update device info: {} Millis", (endTime - startTime));
+   //
     return null;
   }
 
