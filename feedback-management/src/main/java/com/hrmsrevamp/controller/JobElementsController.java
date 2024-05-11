@@ -18,8 +18,7 @@ public class JobElementsController {
 
   @PostMapping("/add")
   public ResponseEntity<CustomResponse> addJobElements(@RequestBody JobElementsModel jobElementsModel) {
-   //
-    return null;
+
   }
 
   private CustomResponse addJobElements(JobElementsModel jobElementsModel) {

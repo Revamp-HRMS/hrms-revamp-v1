@@ -74,6 +74,9 @@ public class SecurityConfiguration {
                     .requestMatchers(HttpMethod.POST, "/api/auth/password")
                     .hasAuthority(RoleEnum.MANAGER.name())
 
+                    /* appraisal API */
+
+
                     .anyRequest().authenticated())
             .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
             .exceptionHandling(exceptionHandling -> exceptionHandling.authenticationEntryPoint(unauthorizedHandler()))
