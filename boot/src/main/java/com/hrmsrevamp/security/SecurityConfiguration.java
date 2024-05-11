@@ -55,24 +55,24 @@ public class SecurityConfiguration {
 
   @Bean
   public AuthenticationManager authenticationManager(AuthenticationConfiguration config)
-          throws Exception {
+      throws Exception {
     return config.getAuthenticationManager();
   }
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http
-            .csrf(AbstractHttpConfigurer::disable)
-            .authorizeHttpRequests(request -> request
-                    .requestMatchers(HttpMethod.GET, "/ws-endpoint/**")
-                    .permitAll()
-                    /* use-auth APIs */
-                    .requestMatchers(HttpMethod.GET, "/api/auth/**").permitAll()
+        .csrf(AbstractHttpConfigurer::disable)
+        .authorizeHttpRequests(request -> request
+            .requestMatchers(HttpMethod.GET, "/ws-endpoint/**")
+            .permitAll()
+            /* use-auth APIs */
+            .requestMatchers(HttpMethod.GET, "/api/auth/**").permitAll()
 
-                    .requestMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
+            .requestMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
 
-                    .requestMatchers(HttpMethod.POST, "/api/auth/password")
-                    .hasAuthority(RoleEnum.MANAGER.name())
+            .requestMatchers(HttpMethod.POST, "/api/auth/password")
+            .hasAuthority(RoleEnum.MANAGER.name())
 
                     /* appraisal API */
 
