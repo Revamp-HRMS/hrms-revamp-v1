@@ -26,7 +26,7 @@ public interface UserRepository extends JpaRepository<User, Long>, PagingAndSort
   Boolean existsByEmail(String email);
 
   Page<User> findByStatusIn(List<String> statuses, Pageable userPage);
-
+  List<User> findByRoles_Name(String roleName);
 
   Optional<User> findByEmailAndStatusIn(String email, List<String> list);
 
