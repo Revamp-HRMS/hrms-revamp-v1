@@ -36,9 +36,6 @@ The Appraisal Portal is a Java Spring Boot application designed to digitize and 
    - Ensure Java JDK and Maven are installed on your system.
    - Navigate to the project directory and execute the command: `mvn spring-boot:run`.
 
-4. **Access the Portal:**
-   - Once the application is running, access the portal through the provided URL.
-
 ## Usage:
 
 1. **Employee Workflow:**
