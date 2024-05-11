@@ -17,7 +17,5 @@ import lombok.Setter;
 public class SignInRequest {
   private String email;
   private String password;
-  private String uid;
-  private String idToken;
   private String refreshToken;
 }

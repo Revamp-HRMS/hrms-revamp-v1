@@ -6,6 +6,7 @@ import com.hrmsrevamp.entity.User;
 import com.hrmsrevamp.exception.UnauthorizedException;
 import com.hrmsrevamp.repository.UserRepository;
 import com.hrmsrevamp.security.UserPrincipal;
+import com.hrmsrevamp.util.RegExValidator;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

@@ -11,7 +11,7 @@ import com.hrmsrevamp.model.SignUpRequest;
  */
 
 public interface AuthService {
-  CustomResponse adminSignup(SignUpRequest signUpRequest);
+  CustomResponse userSignUp(SignUpRequest signUpRequest);
 
   CustomResponse signIn(SignInRequest signInRequest);
 

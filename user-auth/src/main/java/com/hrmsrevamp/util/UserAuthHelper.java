@@ -24,15 +24,4 @@ public class UserAuthHelper {
   private static final Logger LOGGER = LoggerFactory.getLogger(UserAuthHelper.class);
 
 
-
-  public User setUserId(User user) {
-    LOGGER.info("Creating UserId.");
-    if (Objects.nonNull(user.getId())) {
-      user.setUserId(user.getId() + 1000L);
-    } else {
-      LOGGER.warn("User not created.");
-    }
-    return user;
-  }
-
 }

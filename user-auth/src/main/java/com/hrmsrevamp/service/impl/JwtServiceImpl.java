@@ -1,6 +1,6 @@
 package com.hrmsrevamp.service.impl;
 
-import com.hrmsrevamp.constants.LPConstant;
+import com.hrmsrevamp.constants.Constant;
 import com.hrmsrevamp.constants.MessageEnum;
 import com.hrmsrevamp.entity.Role;
 import com.hrmsrevamp.entity.User;
@@ -46,9 +46,9 @@ public class JwtServiceImpl implements JwtService {
     Set<String> permissions = user.getRoles().stream().map(Role::getName).collect(Collectors.toSet());
     return Jwts.builder()
             .setSubject(String.valueOf(user.getId()))
-            .claim(LPConstant.EMAIL, user.getEmail())
-            .claim(LPConstant.STATUS, user.getStatus())
-            .claim(LPConstant.PERMISSION, permissions)
+            .claim(Constant.EMAIL, user.getEmail())
+            .claim(Constant.STATUS, user.getStatus())
+            .claim(Constant.PERMISSION, permissions)
             .setIssuedAt(new Date(System.currentTimeMillis()))
             .setExpiration(new Date(System.currentTimeMillis() + 1000L * 60 * 60 * 24))
             .signWith(getSigningKey(), SignatureAlgorithm.HS256)
@@ -60,11 +60,11 @@ public class JwtServiceImpl implements JwtService {
     Set<String> permissions = user.getRoles().stream().map(Role::getName).collect(Collectors.toSet());
     return Jwts.builder()
             .setSubject(String.valueOf(user.getId()))
-            .claim(LPConstant.NAME, user.getFullName())
-            .claim(LPConstant.EMAIL, user.getEmail())
-            .claim(LPConstant.USER_REGISTER, user.getUserRegistered())
-            .claim(LPConstant.STATUS, user.getStatus())
-            .claim(LPConstant.PERMISSION, permissions)
+            .claim(Constant.NAME, user.getFullName())
+            .claim(Constant.EMAIL, user.getEmail())
+            .claim(Constant.USER_REGISTER, user.getUserRegistered())
+            .claim(Constant.STATUS, user.getStatus())
+            .claim(Constant.PERMISSION, permissions)
             .setIssuedAt(new Date(System.currentTimeMillis()))
             .setExpiration(new Date(System.currentTimeMillis() + 1000L * 60 * 60 * 24))
             .signWith(getSigningKey(), SignatureAlgorithm.HS256)

@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 /**
  * User Role.
  */
@@ -15,12 +13,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Role {
-  private Long id;
-  private String name;
-  private List<Privilege> privileges;
-  private String status;
-  private String createdBy;
-  private String updatedBy;
-  private String createdOn;
-  private String updatedOn;
+    private Long id;
+    private String name;
+    private String status;
+    private String createdBy;
+    private String updatedBy;
+    private String createdOn;
+    private String updatedOn;
 }

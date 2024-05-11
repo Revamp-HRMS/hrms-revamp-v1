@@ -18,6 +18,7 @@ public class SignUpRequest {
   @Email
   private String email;
   private String fullName;
+  private String role;
   @NotNull(message = "Password must not be empty")
   @NotEmpty(message = "Password must not be empty")
   private String password;
