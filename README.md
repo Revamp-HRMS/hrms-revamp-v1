@@ -7,7 +7,7 @@ The Appraisal Portal is a Java Spring Boot application designed to digitize and 
 The current appraisal process within our organization is manual and involves employees individually completing appraisal documents and self-assessing their performance. These documents are then submitted to managers or mentors for further evaluation, where ratings are assigned based on the employee's self-assessment. This approach is labor-intensive, prone to inaccuracies, and lacks transparency, hindering our ability to effectively assess employee performance and provide meaningful feedback.
 
 ## Proposed Solution:
-To address these challenges, we are implementing a comprehensive solution leveraging a Java Spring Boot application. This application will establish a centralized digital portal tailored for the employee appraisal process. Through this portal, employees will securely log in, access the digital appraisal form, and electronically submit their assessments. Subsequently, the submitted forms will be routed to the respective managers for evaluation. Managers will then provide ratings and constructive feedback within the digital platform. Upon completion, the appraisal forms will be automatically forwarded to the HR department for final review and approval.
+To address these challenges, we are implementing a comprehensive solution leveraging a Java Spring Boot application. This application will establish a centralized digital portal tailored for the employee appraisal process. Through this portal, employees will securely log in, access the digital appraisal form, and electronically submit their assessments. Subsequently, the submitted forms will be routed to the respective managers for evaluation. Managers will then provide ratings and constructive feedback within the digital platform. Upon completion, the appraisal forms will be  forwarded to the HR department for final review and approval.
 
 ## Benefits of the Solution:
 - **Enhanced Efficiency:** The digitalization of the appraisal process streamlines workflows, reducing manual efforts and expediting the evaluation cycle.
@@ -34,17 +34,6 @@ To address these challenges, we are implementing a comprehensive solution levera
 - After the manager submits their ratings and feedback, the appraisal form is automatically forwarded to the HR department for final approval.
 - HR personnel can review the submitted evaluations and ensure consistency and fairness across the organization.
 
-## Installation:
-
-1. **Clone the Repository:**
-   - Clone the repository from the provided GitHub link.
-
-2. **Database Setup:**
-   - Set up a MySQL database and configure the `application.properties` file with the database connection details.
-
-3. **Build and Run:**
-   - Ensure Java JDK and Maven are installed on your system.
-   - Navigate to the project directory and execute the command: `mvn spring-boot:run`.
 
 ## Usage:
 
