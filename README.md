@@ -11,9 +11,6 @@ To address these challenges, we are implementing a comprehensive solution levera
 
 ## Benefits of the Solution:
 - **Enhanced Efficiency:** The digitalization of the appraisal process streamlines workflows, reducing manual efforts and expediting the evaluation cycle.
-- **Increased Accuracy:** By eliminating manual data entry and paper-based processes, the likelihood of errors is significantly mitigated, ensuring more precise assessments.
-- **Transparency and Accountability:** Providing employees and managers with access to a centralized digital platform fosters transparency and accountability throughout the appraisal process, enhancing trust and fairness.
-- **Data Security:** Robust security measures, including secure login credentials and data encryption, safeguard sensitive appraisal data, preserving confidentiality and integrity.
 - **Improved Communication:** The digital portal facilitates seamless communication among employees, managers, and HR, enabling effective collaboration and communication of expectations and objectives.
 
 ## Features:
