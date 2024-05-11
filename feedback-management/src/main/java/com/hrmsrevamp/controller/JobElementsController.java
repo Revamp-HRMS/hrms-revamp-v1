@@ -1,49 +1,38 @@
 package com.hrmsrevamp.controller;
 
-import com.hrmsrevamp.entity.RatingAndComments;
-import com.hrmsrevamp.entity.User;
 import com.hrmsrevamp.model.CustomResponse;
 import com.hrmsrevamp.model.JobElementsModel;
+import com.hrmsrevamp.service.JobElementsService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/job")
+@RequestMapping("/api/job-elements")
 public class JobElementsController {
 
-  private
+    @Autowired
+    private JobElementsService jobElementsService;
 
-  @PostMapping("/add")
-  public ResponseEntity<CustomResponse> addJobElements(@RequestBody JobElementsModel jobElementsModel) {
-   //
-    return null;
-  }
-
-  private CustomResponse addJobElements(JobElementsModel jobElementsModel) {
-    User user = new User(); //loggedInUser()
-    RatingAndComments ratingAndCommentsEntity = new RatingAndComments();
-    if (user.getRole().equals("Employee")) {
-      ratingAndCommentsEntity.setEmployeeComments(jobElementsModel.getEmployeeComments());
-      ratingAndCommentsEntity.setSelfAssessment(jobElementsModel.getSelfAssessment());
+    @PostMapping("/add")
+    public ResponseEntity<CustomResponse> addJobElements(@RequestBody JobElementsModel jobElementsModel) {
+        CustomResponse customResponse = jobElementsService.addJobElements(jobElementsModel);
+        return new ResponseEntity<>(customResponse, HttpStatus.OK);
     }
-    if (jobElementsModel.getJobElementId().equals("workQuality")) {
-      JobKnowledge jobKnowledge = new JobKnowledge();
-      jobKnowledge.setUserId(jobElementsModel.getUserId());
-      jobKnowledge.setRatingAndComments(ratingAndCommentsEntity);
-    }
-    JobElementsModel jobElementsModelResponse = new JobElementsModel();
-    jobElementsModelResponse.setJobElementId(JobKnowledge.);
-    CustomResponse.setAndGetCustomResponse(true, "jobElements added successfully", null)
-  }
 
-  private CustomResponse getJobElements(Long User, String jobElements) {
-    if (jobElements.equals("workQuality")) {
-
+    @PutMapping("/update/{id}")
+    public ResponseEntity<CustomResponse> updateJobElements(@PathVariable("id") Long jobElementsId,
+                                                            @RequestBody JobElementsModel jobElementsModel) {
+        CustomResponse customResponse = jobElementsService.updateJobElementsById(jobElementsId, jobElementsModel);
+        return new ResponseEntity<>(customResponse, HttpStatus.OK);
     }
-    findByUserIdAndJobElements(User, jobElements);
-   //fetch from job
-  }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<CustomResponse> getJobElements(@PathVariable("id") Long jobElementsId) {
+        CustomResponse customResponse = jobElementsService.getJobElementsById(jobElementsId);
+        return new ResponseEntity<>(customResponse, HttpStatus.OK);
+    }
+
+
 }

@@ -1,5 +1,6 @@
 package com.hrmsrevamp.service.impl;
 
+import com.hrmsrevamp.constants.MessageEnum;
 import com.hrmsrevamp.model.AppraisalCycleModel;
 import com.hrmsrevamp.model.CustomResponse;
 import com.hrmsrevamp.repository.AppraisalCycleRepository;
@@ -32,6 +33,6 @@ public class AppraisalCycleServiceImpl implements AppraisalCycleService {
   public CustomResponse getAppraisalCycleByUserId(Long userId) {
 
     List<AppraisalCycleModel> appraisalCycleModelsList = new ArrayList<>();
-    return CustomResponse.setAndGetCustomResponse(true, Messages.APPRAISAL_CYCLE_LIST.name(), appraisalCycleModelsList);
+    return CustomResponse.setAndGetCustomResponse(true, MessageEnum.APPRAISAL_CYCLE_LIST.name(), appraisalCycleModelsList);
   }
 }
