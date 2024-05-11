@@ -9,7 +9,7 @@ public interface AppraisalCycleService {
   CustomResponse addAppraisalCycle(AppraisalCycleModel appraisalCycleModel);
 
 
-  CustomResponse updateAppraisalCycle(AppraisalCycleModel appraisalCycleModel);
+  CustomResponse updateAppraisalCycle(Long appraisalId, AppraisalCycleModel appraisalCycleModel);
 
   CustomResponse getAppraisalCycleByUserId(Long userId);
 }
