@@ -55,24 +55,42 @@ public class SecurityConfiguration {
 
   @Bean
   public AuthenticationManager authenticationManager(AuthenticationConfiguration config)
-      throws Exception {
+          throws Exception {
     return config.getAuthenticationManager();
   }
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http
-        .csrf(AbstractHttpConfigurer::disable)
-        .authorizeHttpRequests(request -> request
-            .requestMatchers(HttpMethod.GET, "/ws-endpoint/**")
-            .permitAll()
-            /* use-auth APIs */
-            .requestMatchers(HttpMethod.GET, "/api/auth/**").permitAll()
+            .csrf(AbstractHttpConfigurer::disable)
+            .authorizeHttpRequests(request -> request
+                    .requestMatchers(HttpMethod.GET, "/ws-endpoint/**")
+                    .permitAll()
+                    /* use-auth APIs */
+                    .requestMatchers(HttpMethod.GET, "/api/auth/**").permitAll()
 
-            .requestMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
+                    .requestMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
 
-            .requestMatchers(HttpMethod.POST, "/api/auth/password")
-            .hasAuthority(RoleEnum.MANAGER.name())
+                    .requestMatchers(HttpMethod.POST, "/api/auth/password")
+                    .hasAnyAuthority(RoleEnum.EMPLOYEE.name(), RoleEnum.MANAGER.name(),
+                            RoleEnum.MENTOR.name(), RoleEnum.HR.name(),
+                            RoleEnum.ADMIN.name())
+
+                    /* Appraisal APIs */
+                    .requestMatchers(HttpMethod.POST, "/api/appraisal/**")
+                    .hasAnyAuthority(RoleEnum.EMPLOYEE.name(), RoleEnum.MANAGER.name(),
+                            RoleEnum.MENTOR.name(), RoleEnum.HR.name(),
+                            RoleEnum.ADMIN.name())
+
+                    .requestMatchers(HttpMethod.GET, "/api/appraisal/**")
+                    .hasAnyAuthority(RoleEnum.EMPLOYEE.name(), RoleEnum.MANAGER.name(),
+                            RoleEnum.MENTOR.name(), RoleEnum.HR.name(),
+                            RoleEnum.ADMIN.name())
+
+                    .requestMatchers(HttpMethod.PUT, "/api/appraisal/**")
+                    .hasAnyAuthority(RoleEnum.EMPLOYEE.name(), RoleEnum.MANAGER.name(),
+                            RoleEnum.MENTOR.name(), RoleEnum.HR.name(),
+                            RoleEnum.ADMIN.name())
 
                     .anyRequest().authenticated())
             .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
