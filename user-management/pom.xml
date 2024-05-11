@@ -11,7 +11,13 @@
 
     <groupId>com.hrmsrevamp</groupId>
     <artifactId>user-management</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.hrmsrevamp</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
