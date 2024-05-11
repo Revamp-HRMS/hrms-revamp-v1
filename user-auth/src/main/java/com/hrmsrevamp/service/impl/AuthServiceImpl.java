@@ -14,12 +14,10 @@ import com.hrmsrevamp.repository.UserRepository;
 import com.hrmsrevamp.security.UserPrincipal;
 import com.hrmsrevamp.service.AuthService;
 import com.hrmsrevamp.service.JwtService;
-import com.hrmsrevamp.util.UserAuthHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
@@ -47,11 +45,6 @@ public class AuthServiceImpl implements AuthService {
     private JwtService jwtService;
     @Autowired
     private AuthenticationManager authenticationManager;
-    @Autowired
-    private UserAuthHelper userAuthHelper;
-
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthServiceImpl.class);
 
