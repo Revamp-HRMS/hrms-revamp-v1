@@ -55,14 +55,5 @@ The Appraisal Portal is a Java Spring Boot application designed to digitize and 
    - HR personnel access the submitted appraisal forms and ensure the consistency and fairness of evaluations.
    - They can review ratings provided by managers and finalize the appraisal process.
 
-## Contributing:
-Contributions to the project are welcome. Fork the repository, make changes, and submit a pull request. Please adhere to the existing coding standards and guidelines.
-
-## Support:
-For inquiries or assistance regarding the Appraisal Portal, contact the project maintainer via the provided email address.
-
-## License:
-This project is licensed under the [License Name]. Refer to the `LICENSE.md` file for detailed licensing information.
-
 ## Acknowledgments:
 We extend our gratitude to the Java Spring Boot community for their invaluable resources and support that contributed to the development of this project.
