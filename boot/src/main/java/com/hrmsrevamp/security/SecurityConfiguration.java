@@ -72,7 +72,25 @@ public class SecurityConfiguration {
                     .requestMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
 
                     .requestMatchers(HttpMethod.POST, "/api/auth/password")
-                    .hasAuthority(RoleEnum.MANAGER.name())
+                    .hasAnyAuthority(RoleEnum.EMPLOYEE.name(), RoleEnum.MANAGER.name(),
+                            RoleEnum.MENTOR.name(), RoleEnum.HR.name(),
+                            RoleEnum.ADMIN.name())
+
+                    /* Appraisal APIs */
+                    .requestMatchers(HttpMethod.POST, "/api/appraisal/**")
+                    .hasAnyAuthority(RoleEnum.EMPLOYEE.name(), RoleEnum.MANAGER.name(),
+                            RoleEnum.MENTOR.name(), RoleEnum.HR.name(),
+                            RoleEnum.ADMIN.name())
+
+                    .requestMatchers(HttpMethod.GET, "/api/appraisal/**")
+                    .hasAnyAuthority(RoleEnum.EMPLOYEE.name(), RoleEnum.MANAGER.name(),
+                            RoleEnum.MENTOR.name(), RoleEnum.HR.name(),
+                            RoleEnum.ADMIN.name())
+
+                    .requestMatchers(HttpMethod.PUT, "/api/appraisal/**")
+                    .hasAnyAuthority(RoleEnum.EMPLOYEE.name(), RoleEnum.MANAGER.name(),
+                            RoleEnum.MENTOR.name(), RoleEnum.HR.name(),
+                            RoleEnum.ADMIN.name())
 
                     .anyRequest().authenticated())
             .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
