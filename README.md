@@ -3,6 +3,19 @@
 ## Introduction:
 The Appraisal Portal is a Java Spring Boot application designed to digitize and streamline the employee performance appraisal process within the organization. This portal provides a centralized platform for employees to submit self-appraisals and for managers to review, evaluate, and provide feedback, facilitating a more efficient and transparent appraisal workflow.
 
+## Problem Statement:
+The current appraisal process within our organization is manual and involves employees individually completing appraisal documents and self-assessing their performance. These documents are then submitted to managers or mentors for further evaluation, where ratings are assigned based on the employee's self-assessment. This approach is labor-intensive, prone to inaccuracies, and lacks transparency, hindering our ability to effectively assess employee performance and provide meaningful feedback.
+
+## Proposed Solution:
+To address these challenges, we are implementing a comprehensive solution leveraging a Java Spring Boot application. This application will establish a centralized digital portal tailored for the employee appraisal process. Through this portal, employees will securely log in, access the digital appraisal form, and electronically submit their assessments. Subsequently, the submitted forms will be routed to the respective managers for evaluation. Managers will then provide ratings and constructive feedback within the digital platform. Upon completion, the appraisal forms will be automatically forwarded to the HR department for final review and approval.
+
+## Benefits of the Solution:
+- **Enhanced Efficiency:** The digitalization of the appraisal process streamlines workflows, reducing manual efforts and expediting the evaluation cycle.
+- **Increased Accuracy:** By eliminating manual data entry and paper-based processes, the likelihood of errors is significantly mitigated, ensuring more precise assessments.
+- **Transparency and Accountability:** Providing employees and managers with access to a centralized digital platform fosters transparency and accountability throughout the appraisal process, enhancing trust and fairness.
+- **Data Security:** Robust security measures, including secure login credentials and data encryption, safeguard sensitive appraisal data, preserving confidentiality and integrity.
+- **Improved Communication:** The digital portal facilitates seamless communication among employees, managers, and HR, enabling effective collaboration and communication of expectations and objectives.
+
 ## Features:
 
 ### 1. User Authentication:
