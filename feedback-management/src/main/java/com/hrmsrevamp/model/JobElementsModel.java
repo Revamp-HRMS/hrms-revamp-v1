@@ -9,7 +9,7 @@ public class JobElementsModel {
 
   private Long userId;
   private Long appraisalCycleId;
-  private Long jobElementId;
+  private String jobElement;
   private String selfAssessment;
   private String projectLeader;
   private String mentor;

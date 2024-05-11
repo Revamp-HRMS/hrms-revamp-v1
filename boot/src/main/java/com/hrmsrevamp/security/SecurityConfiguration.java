@@ -92,6 +92,11 @@ public class SecurityConfiguration {
                             RoleEnum.MENTOR.name(), RoleEnum.HR.name(),
                             RoleEnum.ADMIN.name())
 
+                    /* User APIs */
+                    .requestMatchers(HttpMethod.PUT, "/api/user/**")
+                    .hasAnyAuthority(RoleEnum.EMPLOYEE.name(), RoleEnum.MANAGER.name(),
+                            RoleEnum.MENTOR.name(), RoleEnum.HR.name(),
+                            RoleEnum.ADMIN.name())
                     .anyRequest().authenticated())
             .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
             .exceptionHandling(exceptionHandling -> exceptionHandling.authenticationEntryPoint(unauthorizedHandler()))

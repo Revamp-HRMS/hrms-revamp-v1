@@ -1,5 +1,6 @@
 package com.hrmsrevamp.service.impl;
 
+import com.hrmsrevamp.entity.User;
 import com.hrmsrevamp.model.CustomResponse;
 import com.hrmsrevamp.model.JobElementsModel;
 import com.hrmsrevamp.service.JobElementsService;
@@ -15,6 +16,9 @@ public class JobElementsServiceImpl implements JobElementsService {
 
     @Override
     public CustomResponse addJobElements(JobElementsModel jobElementsModel) {
+        User loggedInUser = LoggedInUser.getCurrentUser();
+        String role = loggedInUser.getRole();
+        //switch (loggedInUser);
         return null;
     }
 
